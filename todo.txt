@@ -1,0 +1,5 @@
+add black and white and gray checkered for favicon?
+
+potential person giving a blurb with the directions and that being drawn with svg? not if do this for site.
+
+drawing of titles in svg?

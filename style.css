@@ -1,0 +1,159 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.title h1 {
+    font-size: 4vw;
+}
+
+p {
+    max-width: 20vw;
+}
+
+
+/* Game Board */
+
+div.gameTable {
+    background: rgb(255, 255, 255);
+    border-color: black;
+    box-shadow: #000 .1vw .1vw 0,
+                #000 .2vw .2vw 0,
+                #000 .3vw .3vw 0,
+                #000 .4vw .4vw 0,
+                #000 .5vw .5vw 0,
+                #000 .6vw .6vw 0,
+                #000 .7vw .7vw 0,
+                #000 .8vw .8vw 0;
+  }
+  
+.tile {
+    width: 5vw;
+    height: 5vw;
+    border: .5vw solid black;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.tile[data-val='0'] {
+    background: rgb(255, 255, 255)
+}
+
+.tile[data-val='2'] {
+    background: rgb(230, 230, 230)
+}
+
+.tile[data-val='4'] {
+    background: rgb(207, 207, 207)
+}
+
+.tile[data-val='8'] {
+    background: rgb(184, 184, 184)
+}
+
+.tile[data-val='16'] {
+    background: rgb(161, 161, 161)
+}
+
+.tile[data-val='32'] {
+    background: rgb(138, 138, 138)
+}
+
+.tile[data-val='64'] {
+    background: rgb(115, 115, 115)
+}
+
+.tile[data-val='128'] {
+    background: rgb(92, 92, 92)
+}
+
+.tile[data-val='256'] {
+    background: rgb(69, 69, 69)
+}
+
+.tile[data-val='512'] {
+    background: rgb(46, 46, 46)
+}
+
+.tile[data-val='1024'] {
+    background: rgb(23, 23, 23)
+}
+
+.tile[data-val='2048'] {
+    background: rgb(0, 0, 0)
+}
+
+
+/*
+.tile[data-val='0'] {
+    background: rgb(255, 255, 255)
+}
+
+.tile[data-val='2'] {
+    background: rgb(255, 153, 0)
+}
+
+.tile[data-val='4'] {
+    background: rgb(251, 255, 0)
+}
+
+.tile[data-val='8'] {
+    background: rgb(94, 255, 0)
+}
+
+.tile[data-val='16'] {
+    background: rgb(0, 255, 98)
+}
+
+.tile[data-val='32'] {
+    background: rgb(0, 255, 170)
+}
+
+.tile[data-val='64'] {
+    background: rgb(0, 89, 255)
+}
+
+.tile[data-val='128'] {
+    background: rgb(38, 0, 255)
+}
+
+.tile[data-val='256'] {
+    background: rgb(204, 0, 255)
+}
+
+.tile[data-val='512'] {
+    background: rgb(255, 0, 170)
+}
+
+.tile[data-val='1024'] {
+    background: rgb(255, 0, 98)
+}
+
+.tile[data-val='2048'] {
+    background: rgb(255, 0, 0)
+}
+*/
+
+/* Miscellaneous */
+
+button {
+    background: rgb(255, 255, 255);
+    border-color: black;
+    width: 3vw;
+    height: 1.5vw;
+    font-size: 1vw;
+    transition: transform .12s ease-in-out;    
+  }
+
+button:hover {
+    transform: translate(-100%, -100%);
+    box-shadow: #000 .6vw .6vw 0;
+}
+
+
+/* 
+INSPIRATION: 
+   - 3D-bordering: https://stackoverflow.com/questions/17473813/3d-css-button-with-angled-corner
+*/
