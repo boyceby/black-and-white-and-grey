@@ -12,6 +12,15 @@ p {
     max-width: 20vw;
 }
 
+/* Stage */
+
+.stage {
+    display: flex;
+
+}
+
+
+
 
 /* Game Board */
 

@@ -20,18 +20,22 @@ export default class View {
         title_div.append(title);
         this.div.append(title_div);
 
+        const stage_div = document.createElement('div');
+        stage_div.classList.add('stage');
+        this.div.append(stage_div);
+
         const gameTable_div = document.createElement('div');
         gameTable_div.classList.add('gameTable');
         const gameTable = renderGameTable(this.model.board);
         gameTable_div.append(gameTable);
-        this.div.append(gameTable_div);
+        stage_div.append(gameTable_div);
 
         const directions_div = document.createElement('div');
         directions_div.classList.add('directions');
         const directions = document.createElement('p');
         directions.innerHTML = "Use your keyboard arrow keys to shift the tiles on the board so as to create the number 2048. Be careful not to allow the board to fill up with tiles to the point where you can't make any more moves, or the game will be over!"
         directions_div.append(directions);
-        this.div.append(directions_div);
+        stage_div.append(directions_div);
 
         const gameStatus_div = document.createElement('div');
         gameStatus_div.classList.add('gameStatus');
@@ -39,14 +43,14 @@ export default class View {
         gameStatus.innerHTML = "You haven't quite reached 2048 - keep going!";
         gameStatus.id = 'currentGameStatus';
         gameStatus_div.append(gameStatus);
-        this.div.append(gameStatus_div);
+        stage_div.append(gameStatus_div);
 
         const score_div = document.createElement('div');
         score_div.classList.add('score');
         const score = document.createElement('p');
         score.innerHTML = "Score: <span id='currentScore'>0</span>";
         score_div.append(score);
-        this.div.append(score_div);
+        stage_div.append(score_div);
 
         const resetButton_div = document.createElement('div');
         resetButton_div.classList.add('resetButton');
