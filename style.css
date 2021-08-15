@@ -9,7 +9,13 @@ div.title h1 {
 }
 
 p {
-    max-width: 20vw;
+    font-size: 1.5vw;
+    max-width: 40vw;
+}
+
+
+div.directions {
+    margin-top: 2vh;
 }
 
 
@@ -29,8 +35,8 @@ div.gameTable {
   }
   
 .tile {
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     border: .5vw solid black;
     font-weight: bold;
     text-align: center;
@@ -138,20 +144,43 @@ div.gameTable {
 
 /* Miscellaneous */
 
+.dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+
+#currentScore {
+    border: .5vw solid black;
+    border-radius: 10%;
+    height: 3.5vw;
+    width: 7vw;
+    background-color: black;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+    box-shadow:rgb(92, 92, 92) .2vw .2vw 0;
+    margin-right: 3vw;
+}
+
 button {
-    background: rgb(255, 255, 255);
-    border-color: black;
-    width: 3vw;
-    height: 1.5vw;
+    border: .5vw solid black;
+    border-radius: 10%;
+    height: 3.25vw;
+    width: 5vw;
+    background-color: black;
     font-size: 1vw;
-    transition: transform .12s ease-in-out;    
+    color: white;
+    text-align: center;
+    box-shadow:rgb(92, 92, 92) .2vw .2vw 0;
+
   }
 
 button:hover {
-    transform: translate(-100%, -100%);
-    box-shadow: #000 .6vw .6vw 0;
+    cursor: pointer;
 }
-
 
 /* 
 INSPIRATION: 

@@ -26,27 +26,14 @@ export default class View {
         gameTable_div.append(gameTable);
         this.div.append(gameTable_div);
 
-        const directions_div = document.createElement('div');
-        directions_div.classList.add('directions');
-        const directions = document.createElement('p');
-        directions.innerHTML = "Use your keyboard arrow keys to shift the tiles on the board so as to create the number 2048. Be careful not to allow the board to fill up with tiles to the point where you can't make any more moves, or the game will be over!"
-        directions_div.append(directions);
-        this.div.append(directions_div);
-
-        const gameStatus_div = document.createElement('div');
-        gameStatus_div.classList.add('gameStatus');
-        const gameStatus = document.createElement('p');
-        gameStatus.innerHTML = "You haven't quite reached 2048 - keep going!";
-        gameStatus.id = 'currentGameStatus';
-        gameStatus_div.append(gameStatus);
-        this.div.append(gameStatus_div);
+        const dash_div = document.createElement('div');
+        dash_div.classList.add('dash');
+        this.div.append(dash_div);
 
         const score_div = document.createElement('div');
-        score_div.classList.add('score');
-        const score = document.createElement('p');
-        score.innerHTML = "Score: <span id='currentScore'>0</span>";
-        score_div.append(score);
-        this.div.append(score_div);
+        score_div.id = 'currentScore';
+        score_div.innerHTML = "0";
+        dash_div.append(score_div);
 
         const resetButton_div = document.createElement('div');
         resetButton_div.classList.add('resetButton');
@@ -56,7 +43,22 @@ export default class View {
             this.updateResetListeners({});
         });
         resetButton_div.append(resetButton);
-        this.div.append(resetButton_div);
+        dash_div.append(resetButton_div);
+
+        const directions_div = document.createElement('div');
+        directions_div.classList.add('directions');
+        const directions = document.createElement('p');
+        directions.innerHTML = "<strong>To play:</strong> Excluding white tiles, adjacent tiles of the same shade of grey will collapse to become one shade darker on a move - your mission is to use your arrow keys to shift the tiles on the board in order to ultimately create a black tile."
+        directions_div.append(directions);
+        this.div.append(directions_div);
+
+        const gameStatus_div = document.createElement('div');
+        gameStatus_div.classList.add('gameStatus');
+        const gameStatus = document.createElement('p');
+        gameStatus.innerHTML = "You haven't quite formed a black tile yet - keep trying!";
+        gameStatus.id = 'currentGameStatus';
+        gameStatus_div.append(gameStatus);
+        this.div.append(gameStatus_div);
 
 
         /* Observation of Model */
@@ -69,18 +71,18 @@ export default class View {
         this.model.onReset((e) => {
             document.querySelector('#gameTable').replaceWith(renderGameTable(e.board)); 
             document.querySelector('#currentScore').innerHTML = `${e.score}`;
-            document.querySelector('#currentGameStatus').innerHTML = "You haven't quite reached 2048 - keep going!";
+            document.querySelector('#currentGameStatus').innerHTML = "You haven't quite formed a black tile yet - keep trying!";
         });
 
         this.model.onWin((e) => {
-            document.querySelector('#currentGameStatus').innerHTML = "You created a tile with 2048 - you've won! Keep going to try to achieve as high of a score as possible!"
+            document.querySelector('#currentGameStatus').innerHTML = "You made a black tile - you've won! Keep going to try to achieve as high of a score as possible!"
         });
 
         this.model.onLose((e) => {
             if (e.won) {
-                document.querySelector('#currentGameStatus').innerHTML = "Game over! You created a tile with 2048 and won!";
+                document.querySelector('#currentGameStatus').innerHTML = "Game over! You created a black tile and won!";
             } else {
-                document.querySelector('#currentGameStatus').innerHTML = "Game over! You failed to create a tile with 2048 - try again by resetting below!";
+                document.querySelector('#currentGameStatus').innerHTML = "Game over! Almost! Try again by resetting below!";
             }
         });
 
@@ -163,9 +165,6 @@ const renderGameTable = function (board) {
             const tTile = document.createElement('td');
             tTile.classList.add('tile')
             tTile.dataset.val = `${board[j+(i * boardDimension)]}`;
-            // const tTileContent = document.createElement('p');
-            // tTileContent.innerHTML = `${board[j+(i * boardDimension)]}`;
-            // tTile.append(tTileContent);
             tRow.append(tTile);
         }
         gameTable.append(tRow);
