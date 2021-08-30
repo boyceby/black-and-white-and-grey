@@ -6,10 +6,15 @@
 
 div.title h1 {
     font-size: 4vw;
+    margin-bottom: 0vw
+}
+
+div.attribution h2 {
+    margin-bottom: 2vw;
 }
 
 p {
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     max-width: 40vw;
 }
 
@@ -35,8 +40,8 @@ div.gameTable {
   }
   
 .tile {
-    width: 4vw;
-    height: 4vw;
+    width: 3.75vw;
+    height: 3.75vw;
     border: .5vw solid black;
     font-weight: bold;
     text-align: center;
@@ -91,6 +96,42 @@ div.gameTable {
     background: rgb(0, 0, 0)
 }
 
+.tile[data-val='4096'] {
+    background: rgb(236, 187, 81)
+}
+
+.tile[data-val='8192'] {
+    background: rgb(251, 255, 0)
+}
+
+.tile[data-val='16384'] {
+    background: rgb(0, 255, 106)
+}
+
+.tile[data-val='32768'] {
+    background: rgb(0, 153, 255)
+}
+
+.tile[data-val='65536'] {
+    background: rgb(0, 4, 255)
+}
+
+.tile[data-val='131072'] {
+    background: rgb(204, 0, 255)
+}
+
+.tile[data-val='262144'] {
+    background: rgb(255, 0, 212)
+}
+
+.tile[data-val='524288'] {
+    background: rgb(255, 0, 76)
+}
+
+.tile[data-val='1048576'] {
+    background: rgb(255, 0, 0)
+}
+
 
 /*
 .tile[data-val='0'] {
@@ -98,7 +139,7 @@ div.gameTable {
 }
 
 .tile[data-val='2'] {
-    background: rgb(255, 153, 0)
+    background: rgb(84, 81, 236)
 }
 
 .tile[data-val='4'] {
@@ -180,6 +221,11 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+
+.gameStatus p {
+    margin-top: 0.5vw;
 }
 
 /* 

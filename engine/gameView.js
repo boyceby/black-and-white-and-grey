@@ -20,6 +20,13 @@ export default class View {
         title_div.append(title);
         this.div.append(title_div);
 
+        const attribution_div = document.createElement('div');
+        attribution_div.classList.add('attribution');
+        const attribution = document.createElement('h2');
+        attribution.innerHTML = "Based on the game <a href='https://play2048.co/'>2048</a> by Gabriele Cirulli.";
+        attribution_div.append(attribution);
+        this.div.append(attribution_div);
+
         const gameTable_div = document.createElement('div');
         gameTable_div.classList.add('gameTable');
         const gameTable = renderGameTable(this.model.board);
@@ -48,7 +55,7 @@ export default class View {
         const directions_div = document.createElement('div');
         directions_div.classList.add('directions');
         const directions = document.createElement('p');
-        directions.innerHTML = "<strong>To play:</strong> Excluding white tiles, adjacent tiles of the same shade of grey will collapse to become one shade darker on a move - your mission is to use your arrow keys to shift the tiles on the board in order to ultimately create a black tile."
+        directions.innerHTML = "<strong>To play:</strong> Excluding white tiles, adjacent tiles of the same shade of grey will collapse to become one shade darker on a move - your mission is to use your arrow keys to shift the tiles on the board in order to ultimately create a black tile. Be careful not to let the board fill up!"
         directions_div.append(directions);
         this.div.append(directions_div);
 
@@ -82,7 +89,7 @@ export default class View {
             if (e.won) {
                 document.querySelector('#currentGameStatus').innerHTML = "Game over! You created a black tile and won!";
             } else {
-                document.querySelector('#currentGameStatus').innerHTML = "Game over! Almost! Try again by resetting below!";
+                document.querySelector('#currentGameStatus').innerHTML = "Game over! Almost! Try again by resetting above!";
             }
         });
 
