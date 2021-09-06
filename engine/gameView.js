@@ -31,7 +31,7 @@ export default class View {
         gameTable_div.classList.add('gameTable');
         const gameTable = renderGameTable(this.model.board);
         gameTable_div.append(gameTable);
-        stage_div.append(gameTable_div);
+        this.div.append(gameTable_div);
 
         const dash_div = document.createElement('div');
         dash_div.classList.add('dash');
