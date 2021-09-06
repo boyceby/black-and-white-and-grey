@@ -57,7 +57,7 @@ export default class View {
         const directions = document.createElement('p');
         directions.innerHTML = "<strong>To play:</strong> Excluding white tiles, adjacent tiles of the same shade of grey will collapse to become one shade darker on a move - your mission is to use your arrow keys to shift the tiles on the board in order to ultimately create a black tile. Be careful not to let the board fill up!"
         directions_div.append(directions);
-        stage_div.append(directions_div);
+        this.div.append(directions_div);
 
         const gameStatus_div = document.createElement('div');
         gameStatus_div.classList.add('gameStatus');
@@ -65,7 +65,7 @@ export default class View {
         gameStatus.innerHTML = "You haven't quite formed a black tile yet - keep trying!";
         gameStatus.id = 'currentGameStatus';
         gameStatus_div.append(gameStatus);
-        stage_div.append(gameStatus_div);
+        this.div.append(gameStatus_div);
 
 
         /* Observation of Model */
