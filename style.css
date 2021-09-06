@@ -6,10 +6,21 @@
 
 div.title h1 {
     font-size: 4vw;
+    margin-bottom: 0vw
+}
+
+div.attribution h2 {
+    margin-bottom: 2vw;
 }
 
 p {
-    max-width: 20vw;
+    font-size: 1.25vw;
+    max-width: 40vw;
+}
+
+
+div.directions {
+    margin-top: 2vh;
 }
 
 /* Stage */
@@ -38,8 +49,8 @@ div.gameTable {
   }
   
 .tile {
-    width: 5vw;
-    height: 5vw;
+    width: 3.75vw;
+    height: 3.75vw;
     border: .5vw solid black;
     font-weight: bold;
     text-align: center;
@@ -94,6 +105,42 @@ div.gameTable {
     background: rgb(0, 0, 0)
 }
 
+.tile[data-val='4096'] {
+    background: rgb(236, 187, 81)
+}
+
+.tile[data-val='8192'] {
+    background: rgb(251, 255, 0)
+}
+
+.tile[data-val='16384'] {
+    background: rgb(0, 255, 106)
+}
+
+.tile[data-val='32768'] {
+    background: rgb(0, 153, 255)
+}
+
+.tile[data-val='65536'] {
+    background: rgb(0, 4, 255)
+}
+
+.tile[data-val='131072'] {
+    background: rgb(204, 0, 255)
+}
+
+.tile[data-val='262144'] {
+    background: rgb(255, 0, 212)
+}
+
+.tile[data-val='524288'] {
+    background: rgb(255, 0, 76)
+}
+
+.tile[data-val='1048576'] {
+    background: rgb(255, 0, 0)
+}
+
 
 /*
 .tile[data-val='0'] {
@@ -101,7 +148,7 @@ div.gameTable {
 }
 
 .tile[data-val='2'] {
-    background: rgb(255, 153, 0)
+    background: rgb(84, 81, 236)
 }
 
 .tile[data-val='4'] {
@@ -147,20 +194,48 @@ div.gameTable {
 
 /* Miscellaneous */
 
+.dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+
+#currentScore {
+    border: .5vw solid black;
+    border-radius: 10%;
+    height: 3.5vw;
+    width: 7vw;
+    background-color: black;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+    box-shadow:rgb(92, 92, 92) .2vw .2vw 0;
+    margin-right: 3vw;
+}
+
 button {
-    background: rgb(255, 255, 255);
-    border-color: black;
-    width: 3vw;
-    height: 1.5vw;
+    border: .5vw solid black;
+    border-radius: 10%;
+    height: 3.25vw;
+    width: 5vw;
+    background-color: black;
     font-size: 1vw;
-    transition: transform .12s ease-in-out;    
+    color: white;
+    text-align: center;
+    box-shadow:rgb(92, 92, 92) .2vw .2vw 0;
+
   }
 
 button:hover {
-    transform: translate(-100%, -100%);
-    box-shadow: #000 .6vw .6vw 0;
+    cursor: pointer;
 }
 
+
+.gameStatus p {
+    margin-top: 0.5vw;
+}
 
 /* 
 INSPIRATION: 
