@@ -1,5 +1,5 @@
 # black-and-white-and-grey
-A browser game based on the popular '2048' by Gabriele Cirulli.
+A browser game based on the popular ['2048'] (https://play2048.co/) by Gabriele Cirulli.
 
 To play, visit https://boyceby.github.io/black-and-white-and-grey/!
 
