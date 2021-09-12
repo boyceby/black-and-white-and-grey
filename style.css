@@ -50,8 +50,8 @@ div.gameTable {
   }
   
 .tile {
-    width: 3.75vw;
-    height: 3.75vw;
+    width: 3.25vw;
+    height: 3.25vw;
     border: .5vw solid black;
     font-weight: bold;
     text-align: center;
