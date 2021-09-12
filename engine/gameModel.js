@@ -44,7 +44,7 @@ export default class Model {
 
         switch (direction) {
             case 'up':
-                this.board = moveUp(this.board, this); // made some changes where this re-assignment is unnecessary as had to take less functional approach for proactical issues ran into later -> refactor later perhaps
+                this.board = moveUp(this.board, this);
                 break;
             case 'down':
                 this.board = moveDown(this.board, this);
@@ -63,7 +63,7 @@ export default class Model {
 
         if (checkForGameOver(this)) {
             this.over = true;
-            update(this.getGameState(), this.loseListeners); // could put a little bit of a time buffer between move update and this update for UI purposes? or would that happen on front end? or doesn't matter and just has to work together well?
+            update(this.getGameState(), this.loseListeners);
         }
     }
 
@@ -101,8 +101,6 @@ export default class Model {
         this.loadListeners.push(callback);
     }
     
-    //others? Necessary / consistent style-wise?
-
     getGameState() {
         return {
             board: this.board,
@@ -184,7 +182,7 @@ const moveUp = function (board, model) {
         model.board = mergedBoard;
         update(model.getGameState(), model.moveListeners);
     }
-    return mergedBoard; // functional approach here unnecessary because of additions lines above
+    return mergedBoard;
 }
 
 const mergeColumnUp = function (column, model) {
@@ -214,7 +212,7 @@ const mergeColumnUp = function (column, model) {
 }
 
 
-const moveDown = function (board, model) { // could definitely refactor with moveUp (same with moveLeft and MoveRight with eachother)
+const moveDown = function (board, model) {
 
     let successfulMove = false;
     const numOfCol = Math.sqrt(board.length), numOfRow = Math.sqrt(board.length), rowLength = Math.sqrt(board.length);
@@ -253,7 +251,7 @@ const moveDown = function (board, model) { // could definitely refactor with mov
         update(model.getGameState(), model.moveListeners);
     }
 
-    return mergedBoard; // unnuecessary functional approach residue
+    return mergedBoard; 
 }
 
 const mergeColumnDown = function (column, model) {
@@ -305,7 +303,7 @@ const moveLeft = function (board, model) {
         model.board = mergedBoard;
         update(model.getGameState(), model.moveListeners);
     }
-    return mergedBoard; // unnecessary functionall approach residue
+    return mergedBoard; 
 }
 
 const mergeRowLeft = function (row, model) {
@@ -355,7 +353,7 @@ const moveRight = function (board, model) {
         model.board = mergedBoard;
         update(model.getGameState(), model.moveListeners);
     }
-    return mergedBoard; // unnecessary functional approach residue
+    return mergedBoard; 
 }
 
 const mergeRowRight = function (row, model) {
@@ -386,7 +384,7 @@ const mergeRowRight = function (row, model) {
 
 }
 
-const checkForGameOver = function (model) { // seems could actually save on performance by saving all possible next boards as state after computing here and then just selecting based on which key is pressed (where they would be updated at end of every move when checked -> would need to be called initially before any moves are made though)
+const checkForGameOver = function (model) {
 
     const blanksInBoard = model.board.filter((currentTile) => {
         return (currentTile == 0);
@@ -401,9 +399,6 @@ const checkForGameOver = function (model) { // seems could actually save on perf
                     moveLeftNotPossible(model.board, model) &&
                         moveRightNotPossible(model.board, model));
                     
-
-    // could reduce the copied code involved in this function by passing hypothetical vs actual flag into relevant move functions if wanted to refactor
-
 }
 
 
